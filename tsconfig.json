@@ -10,7 +10,7 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "outDir": "./dist/core",
+    "outDir": "./core",
     "types": [],
     "paths": {
       "@/*": [
@@ -33,6 +33,7 @@
     "node_ modules",
     "unpackage",
     "src/**/* .nvue",
-    "dist"
+    "dist",
+    "core"
   ]
 }

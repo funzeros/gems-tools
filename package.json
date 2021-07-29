@@ -1,8 +1,9 @@
 {
   "name": "gems-tools",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a custom typescript utility class",
-  "main": "index.ts",
+  "main": "core/index.js",
+  "typings": "core/index.d.ts",
   "scripts": {
     "serve": "npm  run dev",
     "dev": "tsc",
@@ -25,6 +26,6 @@
   "author": "GemsFang",
   "license": "ISC",
   "files": [
-    "dist/core"
+    "core"
   ]
 }
