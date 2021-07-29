@@ -1,0 +1,28 @@
+{
+  "name": "gems-tools",
+  "version": "0.0.1",
+  "description": "a custom typescript utility class",
+  "main": "index.ts",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:funzeros/gems-tools.git"
+  },
+  "keywords": [
+    "typescript",
+    "tool",
+    "tools",
+    "util",
+    "utils",
+    "class",
+    "Math",
+    "Map"
+  ],
+  "author": "GemsFang",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}
