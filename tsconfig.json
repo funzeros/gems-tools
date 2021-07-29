@@ -3,29 +3,36 @@
     "target": "esnext",
     "module": "esnext",
     "strict": true,
-    "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
-    "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "outDir": "./dist/core",
     "types": [],
-    "typeRoots": [
-      "./node_modules/@types",
-      "./src/types"
-    ],
-    "paths": {},
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
     "lib": [
       "esnext",
-    ]
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ],
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "strictPropertyInitialization": false,
+    "emitDecoratorMetadata": true,
+    "declaration": true
   },
-  "include": [
-    "src/**/*.ts",
-    "index.ts"
-  ],
   "exclude": [
-    "node_modules"
+    "node_ modules",
+    "unpackage",
+    "src/**/* .nvue",
+    "dist"
   ]
 }

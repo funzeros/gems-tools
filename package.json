@@ -4,7 +4,9 @@
   "description": "a custom typescript utility class",
   "main": "index.ts",
   "scripts": {
-    "test": "test"
+    "serve": "npm  run dev",
+    "dev": "tsc",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -22,7 +24,7 @@
   ],
   "author": "GemsFang",
   "license": "ISC",
-  "devDependencies": {
-    "typescript": "^4.3.5"
-  }
+  "files": [
+    "dist/core"
+  ]
 }
