@@ -19,9 +19,13 @@
     "name": "描述",
     "style": "> {i}"
   },
+  "description": {
+    "name": "描述",
+    "style": "> {i}"
+  },
   "example": {
     "name": "示例",
-    "style": "- **示例**\r\n```{i}```"
+    "style": "- **示例**\r\n```\r\n{i}\r\n```"
   },
   "extends": {
     "name": "继承",

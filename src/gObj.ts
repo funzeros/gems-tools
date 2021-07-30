@@ -1,19 +1,25 @@
 import { isEmpty, isObject } from "./gType";
-
 /**
- * 获取keys
- * @param data
- * @returns
+ * @module gObj
+ * @type function tools
+ * @description 针对对象的一些工具函数
+ */
+/**
+ * @title keys
+ * @description 获取keys 等同于Object.keys
+ * @param data object
+ * @returns (keyof data)[]
  */
 const keys = <T>(data: T) => {
   return Object.keys(data) as (keyof T)[];
 };
 
 /**
- * 忽略某些属性
- * @param origin
- * @param callback
- * @returns
+ * @title omitBy
+ * @description 忽略某些属性
+ * @param origin object 需要操作的对象
+ * @param callback (origin[key])=>boolean 忽略的方法 类似数组filter 用法
+ * @returns object
  */
 const omitBy = <T>(origin: T, callback: Function) => {
   return keys(origin).reduce((acc, key) => {
@@ -22,19 +28,21 @@ const omitBy = <T>(origin: T, callback: Function) => {
   }, {});
 };
 /**
- * 获取数组交集
- * @param arrT
- * @param arrR
- * @returns
+ * @title intersection
+ * @description 获取数组交集 后续版本将迁移至gArray 但引入方式相同 不影响历史代码
+ * @param arrT []数组1
+ * @param arrR []数组2
+ * @returns []两数组同栈集合
  */
 const intersection = <T extends any[], R extends any[]>(arrT: T, arrR: R) => {
   return arrT.filter((m) => arrR.includes(m));
 };
 /**
- * 挑选某些属性
- * @param origin
- * @param propList
- * @returns
+ * @title pick
+ * @description 挑选某些属性
+ * @param origin 被操作对象
+ * @param propList 需要挑选的字段数组
+ * @returns object
  */
 const pick = <T>(origin: T, propList: (keyof T)[]) => {
   return keys(origin).reduce((acc, key) => {
@@ -43,10 +51,10 @@ const pick = <T>(origin: T, propList: (keyof T)[]) => {
   }, {});
 };
 /**
- * 浅拷贝
- * @param origin
- * @param result
- * @returns
+ * @title clone
+ * @description 浅拷贝
+ * @param origin 拷贝对象
+ * @returns new origin
  */
 const clone = <T extends Object>(origin: T, result = {}): T => {
   for (let prop in origin) {
@@ -57,10 +65,10 @@ const clone = <T extends Object>(origin: T, result = {}): T => {
   return result as T;
 };
 /**
- * 深拷贝
- * @param data
- * @param weak
- * @returns
+ * @title deepClone
+ * @description 深拷贝
+ * @param data 拷贝对象 可以是正则/日期对象
+ * @returns new origin
  */
 const deepClone = <T>(data: any, weak = new WeakMap()): T => {
   if (typeof data !== "object" || data === null) return data;
@@ -84,18 +92,23 @@ const deepClone = <T>(data: any, weak = new WeakMap()): T => {
   return result as T;
 };
 /**
- * 合并对象
- * @param target
- * @param args
- * @returns
+ * @title extend
+ * @description 合并对象 基于Object.assign
+ * @param target 源对象
+ * @param args 其余对象
+ * @returns target
  */
 const extend = (target: object, ...args: any[]) =>
   Object.assign(target, ...args);
 
 /**
- * 根据保留/删除(keep/remove)类型过滤字段
- * @param type
- * @returns
+ * @title filterKeys
+ * @description 根据保留/删除(keep/remove)类型过滤字段 柯里化函数
+ * @param type "keep"|"remove"
+ * @param obj
+ * @param keys  string[] 保留或者删除的数组
+ * @returns object
+ * @example import {filterKeys} from "gems-tools"; filterKeys("keep")({a:1,b:2},['a']);
  */
 const filterKeys =
   (type: "keep" | "remove") =>
@@ -107,18 +120,27 @@ const filterKeys =
       return acc;
     }, {});
 /**
- *  保留给定字段
+ * @title keepKeys
+ * @description 保留给定字段 filterKeys("keep")
+ * @param obj
+ * @param keys  string[] 保留或者删除的数组
+ * @returns object
  */
 const keepKeys = filterKeys("keep");
 /**
- * 删除给定字段
+ * @title removeKeys
+ * @description 删除给定字段 filterKeys("remove")
+ * @param obj
+ * @param keys  string[] 保留或者删除的数组
+ * @returns object
  */
 const removeKeys = filterKeys("remove");
 /**
- * 替换对象字段名
+ * @title replaceKeys
+ * @description 替换对象字段名
  * @param obj
- * @param rules
- * @returns
+ * @param rules {[key in obj]:newKey}
+ * @returns object
  */
 const replaceKeys = <T, R = any>(
   obj: T,
@@ -132,9 +154,11 @@ const replaceKeys = <T, R = any>(
 };
 
 /**
- * 覆盖对象属性
+ * @title mergeProperties
+ * @description 覆盖对象属性 以初始化对象为基准 去除新对象多余字段，为缺失字段填充默认值，浅操作，仅对第一层字段有效
  * @param distObject 初始化对象
  * @param srcObject 传递过来新对象
+ * @returns object
  */
 function mergeProperties<T, R>(distObject: T, srcObject: R) {
   const distPropList = keys(distObject);

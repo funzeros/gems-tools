@@ -5,6 +5,11 @@
   const docDictMap = require("./docDictMap.json");
   //   read
   const baseDoc = fs.readFileSync(path.join(__dirname, "./baseDoc.md"), "utf8");
+  const changelogDoc = fs.readFileSync(
+    path.join(__dirname, "../CHANGELOG.md"),
+    "utf8"
+  );
+
   const basePath = path.join(__dirname, "../src");
   const files = fs.readdirSync(basePath);
   console.log(styles["green"], "准备读取以下文件");
@@ -35,7 +40,7 @@
       if (!(rows && rows.length)) return [];
       return rows.reduce((pre, row) => {
         const arr = row.substr(1, row.length - 3).split(" ");
-        const [key, value] = arr;
+        const [key, value] = [arr.shift(), arr.join(" ")];
         pre.push({ key, value });
         return pre;
       }, []);
@@ -49,6 +54,9 @@
   console.log(styles["green"], "开始转码");
   const writeText = [
     baseDoc,
+    "[TOC]",
+    changelogDoc,
+    "# api 文档",
     ...docs.map((fileData) => {
       const ctx = fileData.content
         .map((ms) => {
