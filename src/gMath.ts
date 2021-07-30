@@ -39,7 +39,12 @@ export default class GMath {
   static randomArray<T>(arr: T[]): T {
     return arr[Math.floor(Math.random() * arr.length)];
   }
-  static randomArrayLength(length: number) {
+  /**
+   * 随机长度范围内的整值（多适用于随机取数组索引）
+   * @param length
+   * @returns
+   */
+  static randomLength(length: number) {
     return Math.floor(Math.random() * length);
   }
   /**
