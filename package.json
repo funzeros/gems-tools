@@ -5,9 +5,10 @@
   "main": "core/index.js",
   "typings": "core/index.d.ts",
   "scripts": {
-    "serve": "npm  run dev",
+    "serve": "npm run dev",
     "dev": "tsc",
-    "build": "tsc"
+    "build": "tsc",
+    "md": "node build/index.js"
   },
   "repository": {
     "type": "git",

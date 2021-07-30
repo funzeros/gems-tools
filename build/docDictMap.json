@@ -1,0 +1,34 @@
+{
+  "module": {
+    "name": "模块",
+    "style": "### {i}"
+  },
+  "title": {
+    "name": "名字",
+    "style": "##### {i}"
+  },
+  "param": {
+    "name": "参数",
+    "style": "- **参数** {i}"
+  },
+  "type": {
+    "name": "类型",
+    "style": "**类型** `{i}`"
+  },
+  "desc": {
+    "name": "描述",
+    "style": "> {i}"
+  },
+  "example": {
+    "name": "示例",
+    "style": "- **示例**\r\n```{i}```"
+  },
+  "extends": {
+    "name": "继承",
+    "style": "**继承** `{i}`"
+  },
+  "returns": {
+    "name": "返回",
+    "style": "- **返回值** {i}"
+  }
+}
