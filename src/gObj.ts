@@ -1,4 +1,5 @@
 import { isEmpty, isObject } from "./gType";
+import { intersection } from "./gArray";
 /**
  * @module gObj
  * @type function tools
@@ -27,16 +28,7 @@ const omitBy = <T>(origin: T, callback: Function) => {
     return acc;
   }, {});
 };
-/**
- * @title intersection
- * @description 获取数组交集 后续版本将迁移至gArray 但引入方式相同 不影响历史代码
- * @param arrT []数组1
- * @param arrR []数组2
- * @returns []两数组同栈集合
- */
-const intersection = <T extends any[], R extends any[]>(arrT: T, arrR: R) => {
-  return arrT.filter((m) => arrR.includes(m));
-};
+
 /**
  * @title pick
  * @description 挑选某些属性
@@ -108,11 +100,11 @@ const extend = (target: object, ...args: any[]) =>
  * @param obj
  * @param keys  string[] 保留或者删除的数组
  * @returns object
- * @example import {filterKeys} from "gems-tools"; filterKeys("keep")({a:1,b:2},['a']);
+ * @example filterKeys("keep")({a:1,b:2},['a']);
  */
 const filterKeys =
   (type: "keep" | "remove") =>
-  (obj: { [x: string]: any }, keys: string[] = []) =>
+  (obj: AnyObj, keys: string[] = []) =>
     Object.keys(obj).reduce((acc, key) => {
       if (type === "keep" ? keys.includes(key) : !keys.includes(key)) {
         acc[key] = obj[key];
@@ -180,7 +172,6 @@ export {
   mergeProperties,
   keys,
   omitBy,
-  intersection,
   pick,
 };
 const gObj = {
@@ -194,7 +185,6 @@ const gObj = {
   mergeProperties,
   keys,
   omitBy,
-  intersection,
   pick,
 };
 export default gObj;

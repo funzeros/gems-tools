@@ -38,7 +38,7 @@ export default class GMap<K, V> extends Map<K, V> {
   }
   /**
    * @title getEntrues
-   * @returns '[key,value]'[]  `此处单引号是为了防止markdown转变为超链接`
+   * @returns <[key,value]>[]
    */
   getEntries() {
     return Array.from(this);

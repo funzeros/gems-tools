@@ -1,11 +1,13 @@
 {
   "module": {
     "name": "模块",
-    "style": "### {i}"
+    "style": "## {i}",
+    "toc": "- [{k}](#{v})"
   },
   "title": {
     "name": "名字",
-    "style": "##### {i}"
+    "style": "### {i}",
+    "toc": "  - [{k}](#{v})"
   },
   "param": {
     "name": "参数",

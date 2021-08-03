@@ -9,7 +9,7 @@
  * @param type string 类型字符串
  * @param val 判断的值
  * @returns boolean
- * @example import {isType} from "gems-tools"; isType('String')('测试用例');
+ * @example isType('String')('测试用例');
  */
 const isType =
   <T = any>(type: string) =>
