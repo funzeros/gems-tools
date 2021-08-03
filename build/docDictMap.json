@@ -19,11 +19,11 @@
   },
   "desc": {
     "name": "描述",
-    "style": "> {i}"
+    "style": "> {i} \r\n > "
   },
   "description": {
     "name": "描述",
-    "style": "> {i}"
+    "style": "> {i} \r\n > "
   },
   "example": {
     "name": "示例",
