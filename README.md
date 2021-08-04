@@ -31,6 +31,10 @@
 - **2021-8-3** 优化文档目录
 - **2021-8-3** 新增 `gArray` 工具函数
 
+## v0.0.6
+
+- **2021-8-4** 开始编写`gUtils` 新增 `gNextTick` 函数
+
 # api 文档
 - [gArray](#garray)
   - [forEachType](#foreachtype)
@@ -108,6 +112,8 @@
   - [isEmpty](#isempty)
   - [isNaN](#isnan)
   - [isElement](#iselement)
+- [gUtils](#gutils)
+  - [gNextTick](#gnexttick)
 ## gArray
 **类型** `function tools`
 > 针对数组的一些工具函数 
@@ -484,3 +490,12 @@ isType('String')('测试用例');
 ### isElement
 - **参数** val
 - **返回值** boolean
+## gUtils
+**类型** `function tools`
+> 一些好用的工具函数，不针对类型 
+ > 
+### gNextTick
+> 基于setTimeout的微任务入列 
+ > 
+- **参数** cb 即将执行的函数
+- **参数** arg 传入cb的参数

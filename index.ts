@@ -37,6 +37,7 @@ import gObj, {
   pick,
 } from "./src/gObj";
 
+import gUtils, { gNextTick } from "@/gUtils";
 import gArray, {
   forEachType,
   forEach,
@@ -126,4 +127,7 @@ export {
   indexOfAll,
   shuffe,
   sample,
+  // gUtils,
+  gUtils,
+  gNextTick,
 };
