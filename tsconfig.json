@@ -12,11 +12,6 @@
     "baseUrl": ".",
     "outDir": "./core",
     "types": [],
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    },
     "lib": [
       "esnext",
       "dom",

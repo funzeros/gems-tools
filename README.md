@@ -35,6 +35,10 @@
 
 - **2021-8-4** 开始编写`gUtils` 新增 `gNextTick` 函数
 
+## v0.0.7
+
+- **2021-8-4** `fixed` 修复引入错误
+
 # api 文档
 - [gArray](#garray)
   - [forEachType](#foreachtype)
