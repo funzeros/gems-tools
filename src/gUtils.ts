@@ -14,6 +14,7 @@ const gNextTick = (cb: Function, ...arg: any[]) => {
   setTimeout(() => {
     cb(...arg);
   }, 0);
+  return gNextTick;
 };
 
 export { gNextTick };
