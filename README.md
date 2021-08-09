@@ -70,6 +70,9 @@
   - [getItem](#getitem)
   - [removeItem](#removeitem)
   - [clear](#clear)
+- [GTime](#gtime)
+  - [formatZero](#formatzero)
+  - [getDigitTime](#getdigittime)
 - [gType](#gtype)
   - [isType](#istype)
   - [isObject](#isobject)
@@ -135,6 +138,10 @@
 ## v0.0.9
 
 - **2021-8-9** 新增 `GStorage` 类
+
+## v0.0.10
+
+- **2021-8-9** 新增 `GTime` 类
 
 # api 文档
 ## gArray
@@ -474,6 +481,21 @@ filterKeys("keep")({a:1,b:2},['a']);
 ### clear
 > 清除当前命名空间 
  > 
+## GTime
+**类型** `class`
+> 一些时间和日期方法 
+ > 
+### formatZero
+> 静态方法，补零 
+ > 
+- **参数** num
+- **参数** len 2
+- **返回值** string
+### getDigitTime
+> 静态方法 获取时分秒， 
+ > 
+- **参数** time 默认当前时间
+- **返回值** xx:xx:xx
 ## gType
 **类型** `function tools`
 ### isType

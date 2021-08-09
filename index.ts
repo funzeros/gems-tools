@@ -64,7 +64,9 @@ import gArray, {
   sample,
 } from "./src/gArray";
 
-import GStorage, { useGStore } from "src/gStore";
+import GStorage, { useGStore } from "./src/gStore";
+import GTime from "./src/gTime";
+
 export {
   GMath,
   GMap,
@@ -136,4 +138,6 @@ export {
   // gStore,
   GStorage,
   useGStore,
+  // gTime
+  GTime,
 };

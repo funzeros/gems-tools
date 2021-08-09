@@ -1,6 +1,6 @@
 {
   "name": "gems-tools",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "a custom typescript utility class",
   "main": "core/index.js",
   "typings": "core/index.d.ts",
