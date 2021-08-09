@@ -39,6 +39,11 @@
 
 - **2021-8-4** `fixed` 修复引入错误
 
+## v0.0.8
+
+- **2021-8-4** `gNextTick` 更名为 `nextTick`，新增 `copy`
+- **2021-8-9** `nextTick` 升级，现在可以更准确的在下一 tick 执行任务了
+
 # api 文档
 - [gArray](#garray)
   - [forEachType](#foreachtype)
@@ -117,7 +122,8 @@
   - [isNaN](#isnan)
   - [isElement](#iselement)
 - [gUtils](#gutils)
-  - [gNextTick](#gnexttick)
+  - [nextTick](#nexttick)
+  - [copy](#copy)
 ## gArray
 **类型** `function tools`
 > 针对数组的一些工具函数 
@@ -498,8 +504,10 @@ isType('String')('测试用例');
 **类型** `function tools`
 > 一些好用的工具函数，不针对类型 
  > 
-### gNextTick
-> 基于setTimeout的微任务入列 
- > 
+### nextTick
 - **参数** cb 即将执行的函数
-- **参数** arg 传入cb的参数
+- **参数** ctx 传入cb的参数
+### copy
+> 复制到剪贴板 
+ > 
+- **参数** string

@@ -6,16 +6,39 @@
 
 /**
  * @title nextTick
- * @description 基于setTimeout的微任务入列
  * @param cb 即将执行的函数
- * @param arg 传入cb的参数
+ * @param ctx 传入cb的参数
  */
-const nextTick = (cb: Function, ...arg: any[]) => {
-  Promise.resolve().then(() => {
-    cb(...arg);
-  });
-  return nextTick;
+
+const callbacks: Function[] = [];
+let pending = false;
+
+function flushCallbacks() {
+  pending = false;
+  const copies = callbacks.slice(0);
+  callbacks.length = 0;
+  for (let i = 0; i < copies.length; i++) {
+    copies[i]();
+  }
+}
+
+let microTimerFunc: Function;
+const p = Promise.resolve();
+microTimerFunc = () => {
+  p.then(flushCallbacks);
 };
+
+function nextTick(cb: Function, ctx: any) {
+  callbacks.push(() => {
+    if (cb) {
+      cb.call(ctx);
+    }
+  });
+  if (!pending) {
+    pending = true;
+    microTimerFunc();
+  }
+}
 
 /**
  * @title copy
