@@ -105,9 +105,9 @@
     const mdDoc = generateDoc(docs);
     const writeText = [
       baseDoc,
+      ...TOC,
       changelogDoc,
       "# api 文档",
-      ...TOC,
       ...mdDoc,
     ].join("\r\n");
     console.log(styles["green"], "转码完成");
