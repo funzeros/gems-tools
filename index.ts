@@ -63,6 +63,8 @@ import gArray, {
   shuffe,
   sample,
 } from "./src/gArray";
+
+import GStorage, { useGStore } from "src/gStore";
 export {
   GMath,
   GMap,
@@ -131,4 +133,7 @@ export {
   gUtils,
   nextTick,
   copy,
+  // gStore,
+  GStorage,
+  useGStore,
 };

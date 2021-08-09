@@ -62,6 +62,14 @@
   - [removeKeys](#removekeys)
   - [replaceKeys](#replacekeys)
   - [mergeProperties](#mergeproperties)
+- [GStorage](#gstorage)
+  - [useGStore](#usegstore)
+  - [init](#init)
+  - [saveState](#savestate)
+  - [setItem](#setitem)
+  - [getItem](#getitem)
+  - [removeItem](#removeitem)
+  - [clear](#clear)
 - [gType](#gtype)
   - [isType](#istype)
   - [isObject](#isobject)
@@ -122,6 +130,11 @@
 
 - **2021-8-4** `gNextTick` 更名为 `nextTick`，新增 `copy`
 - **2021-8-9** `nextTick` 升级，现在可以更准确的在下一 tick 执行任务了
+-
+
+## v0.0.9
+
+- **2021-8-9** 新增 `GStorage` 类
 
 # api 文档
 ## gArray
@@ -428,6 +441,39 @@ filterKeys("keep")({a:1,b:2},['a']);
 - **参数** distObject 初始化对象
 - **参数** srcObject 传递过来新对象
 - **返回值** object
+## GStorage
+**类型** `class`
+**继承** `Map`
+### useGStore
+> 直接使用，传入命名空间，会查找或创建并返回对应实例 
+ > 
+- **参数** namespaced string
+- **返回值** GStorage
+### init
+> 实例方法 初始化 自动调用 
+ > 
+### saveState
+> 实例方法 保存当前命名空间本地存储信息 自动调用 
+ > 
+### setItem
+> 存储字段名对应的内容信息 
+ > 
+- **参数** key
+- **参数** data
+- **返回值** state 整个store对象
+### getItem
+> 获取字段名对应的内容信息 
+ > 
+- **参数** key
+- **返回值** value store中key对应的值
+### removeItem
+> 删除字段名对应的内容信息 
+ > 
+- **参数** key
+- **返回值** state 整个store对象
+### clear
+> 清除当前命名空间 
+ > 
 ## gType
 **类型** `function tools`
 ### isType
