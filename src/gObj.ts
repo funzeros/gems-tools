@@ -174,17 +174,3 @@ export {
   omitBy,
   pick,
 };
-const gObj = {
-  clone,
-  deepClone,
-  extend,
-  filterKeys,
-  keepKeys,
-  removeKeys,
-  replaceKeys,
-  mergeProperties,
-  keys,
-  omitBy,
-  pick,
-};
-export default gObj;

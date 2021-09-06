@@ -368,30 +368,3 @@ export {
   shuffe,
   sample,
 };
-const gArray = {
-  forEachType,
-  forEach,
-  forEachRight,
-  isArrayLike,
-  deepFlatten,
-  unique,
-  intersection,
-  intersectionAll,
-  union,
-  difference,
-  differenceAll,
-  array2Tree,
-  tree2Array,
-  array2Object,
-  getTreeChains,
-  arrayLike2Array,
-  chunk,
-  compact,
-  countBy,
-  countByValue,
-  indexOfAll,
-  shuffe,
-  sample,
-};
-
-export default gArray;

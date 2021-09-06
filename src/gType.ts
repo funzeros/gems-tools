@@ -141,29 +141,6 @@ const isElement = (val: HTMLElement) =>
     ? val instanceof HTMLElement
     : isObject(val) && isString(val.nodeName) && val.nodeType === 1;
 
-const gTypes = {
-  isType,
-  isObject,
-  isEmpty,
-  isEmptyObject,
-  isArray,
-  isArguments,
-  isNull,
-  isNumber,
-  isString,
-  isBoolean,
-  isFunction,
-  isPromise,
-  isDate,
-  isRegExp,
-  isMap,
-  isSet,
-  isSymbol,
-  isError,
-  isUndefined,
-  isNaN,
-  isElement,
-};
 export {
   isType,
   isObject,
@@ -187,4 +164,3 @@ export {
   isNaN,
   isElement,
 };
-export default gTypes;

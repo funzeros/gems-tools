@@ -55,9 +55,3 @@ const copy = (string: string) => {
 };
 
 export { nextTick, copy };
-const gUtils = {
-  nextTick,
-  copy,
-};
-
-export default gUtils;
