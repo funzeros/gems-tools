@@ -96,5 +96,4 @@ class GStorage {
   }
 }
 
-export { useGStore };
-export default GStorage;
+export { useGStore, GStorage };
