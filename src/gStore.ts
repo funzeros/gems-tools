@@ -5,7 +5,12 @@ import { removeKeys } from "./gObj";
  * @extends Map
  */
 
-const Store: Storage = window.localStorage;
+let Store: Storage;
+try {
+  Store = window?.localStorage;
+} catch (error) {
+  console.log("当前环境不存在window，无法使用gStore");
+}
 const storeMap = new Map<string, GStorage>(); // 存储不同模块本地存储信息列表
 
 /**
