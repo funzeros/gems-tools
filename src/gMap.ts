@@ -3,7 +3,7 @@
  * @type class
  * @extends Map
  */
-export default class GMap<K, V> extends Map<K, V> {
+export class GMap<K, V> extends Map<K, V> {
   /**
    * @title array
    * @description 静态方法

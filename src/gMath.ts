@@ -3,7 +3,7 @@
  * @type class
  * @description 注意！该类下的方法皆为静态方法
  */
-export default class GMath {
+export class GMath {
   /**
    * @title randomLenNum
    * @description 随机长度数字

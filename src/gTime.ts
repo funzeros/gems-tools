@@ -3,7 +3,7 @@
  * @type class
  * @description 一些时间和日期方法
  */
-class GTime {
+export class GTime {
   /**
    * @title formatZero
    * @description 静态方法，补零
@@ -32,5 +32,3 @@ class GTime {
     )}:${this.formatZero(now.getSeconds(), 2)}`;
   }
 }
-
-export default GTime;
